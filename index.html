@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Past Papers Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chemistry Past Papers Search</h1>
+            <p>Find chemistry past papers from our collection</p>
+        </header>
+
+        <!-- API Key Form (hidden by default) -->
+        <div id="api-key-form" class="api-key-form">
+            <div class="api-key-container">
+                <h2>Enter Google API Key</h2>
+                <p>The default API key isn't working? Enter your own Google API key below:</p>
+                <form>
+                    <input type="text" id="api-key-input" placeholder="Paste your Google API Key here" required>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <p class="api-key-help">
+                    <i class="fas fa-info-circle"></i> 
+                    Your API key will be stored locally in your browser and is only used to access the Google Drive API.
+                </p>
+                <p class="api-key-help">
+                    <a href="https://console.cloud.google.com/apis/credentials" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Get a Google API key
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="search-section">
+            <form id="search-form">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search for past papers...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="content-wrapper">
+            <aside class="filters-panel">
+                <h2>Filters</h2>
+                <form id="filters-form">
+                    <div class="filter-group">
+                        <h3>Topics</h3>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="organic" name="topic" value="Organic">
+                                <label for="organic">Organic Chemistry</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="inorganic" name="topic" value="Inorganic">
+                                <label for="inorganic">Inorganic Chemistry</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="physical" name="topic" value="Physical">
+                                <label for="physical">Physical Chemistry</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="analytical" name="topic" value="Analytical">
+                                <label for="analytical">Analytical Chemistry</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="biochemistry" name="topic" value="Biochemistry">
+                                <label for="biochemistry">Biochemistry</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Year</h3>
+                        <select name="year">
+                            <option value="">All Years</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                        </select>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <button type="button" id="change-api-key-btn" class="btn btn-secondary">
+                            <i class="fas fa-key"></i> Change API Key
+                        </button>
+                    </div>
+                </form>
+            </aside>
+
+            <main>
+                <div id="loading-indicator">
+                    <div class="spinner"></div>
+                    <p>Loading papers...</p>
+                </div>
+                <div id="results-container">
+                    <!-- Results will be displayed here -->
+                </div>
+            </main>
+        </div>
+        
+        <footer>
+            <p>Chemistry Past Papers Search Engine | <a href="https://github.com/YOUR-USERNAME/chemistry-papers-search" target="_blank">GitHub Repository</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
